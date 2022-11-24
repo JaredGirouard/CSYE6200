@@ -8,9 +8,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane minHeight="900.0" minWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
+<AnchorPane minHeight="900.0" minWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.FourController">
    <children>
-      <VBox fx:id="ap" alignment="CENTER" layoutX="30.0" layoutY="103.0" prefHeight="577.0" prefWidth="536.0" spacing="10.0">
+      <VBox alignment="CENTER" layoutX="40.0" layoutY="113.0" prefHeight="577.0" prefWidth="536.0" spacing="10.0">
          <children>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="392.0" spacing="10.0">
                <children>
@@ -30,11 +30,6 @@
                      </font>
                   </Label>
                   <Label fx:id="lbl4" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
-                     <font>
-                        <Font size="43.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lbl5" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
                      <font>
                         <Font size="43.0" />
                      </font>
@@ -63,11 +58,6 @@
                         <Font size="43.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbl51" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
-                     <font>
-                        <Font size="43.0" />
-                     </font>
-                  </Label>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="392.0" spacing="10.0">
@@ -88,11 +78,6 @@
                      </font>
                   </Label>
                   <Label fx:id="lbl42" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
-                     <font>
-                        <Font size="43.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lbl52" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
                      <font>
                         <Font size="43.0" />
                      </font>
@@ -121,11 +106,6 @@
                         <Font size="43.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbl53" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
-                     <font>
-                        <Font size="43.0" />
-                     </font>
-                  </Label>
                </children>
             </HBox>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="392.0" spacing="10.0">
@@ -146,11 +126,6 @@
                      </font>
                   </Label>
                   <Label fx:id="lbl44" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
-                     <font>
-                        <Font size="43.0" />
-                     </font>
-                  </Label>
-                  <Label fx:id="lbl54" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
                      <font>
                         <Font size="43.0" />
                      </font>
@@ -179,17 +154,12 @@
                         <Font size="43.0" />
                      </font>
                   </Label>
-                  <Label fx:id="lbl55" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
-                     <font>
-                        <Font size="43.0" />
-                     </font>
-                  </Label>
                </children>
             </HBox>
          </children>
       </VBox>
-      <Button fx:id="btn1" layoutX="272.0" layoutY="721.0" mnemonicParsing="false" onAction="#SubmitGuess" onKeyReleased="#SetLabelText" text="ENTER" />
-      <Label fx:id="solLbl" alignment="CENTER" layoutX="221.0" layoutY="775.0" prefHeight="70.0" prefWidth="159.0" />
-      <ChoiceBox fx:id="cbMode" layoutX="223.0" layoutY="67.0" prefWidth="150.0" />
+      <Button fx:id="btn1" layoutX="282.0" layoutY="731.0" mnemonicParsing="false" onAction="#SubmitGuess" onKeyReleased="#SetLabelText" text="ENTER" />
+      <Label fx:id="solLbl" alignment="CENTER" layoutX="231.0" layoutY="785.0" prefHeight="70.0" prefWidth="159.0" />
+      <ChoiceBox fx:id="cbMode" layoutX="233.0" layoutY="77.0" prefWidth="150.0" />
    </children>
 </AnchorPane>

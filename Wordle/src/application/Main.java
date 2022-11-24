@@ -18,7 +18,7 @@ public class Main extends Application {
 	public void start(Stage primaryStage) throws IOException {
 	
 		Parent root = FXMLLoader.load(getClass().getResource("Main.fxml"));
-		Scene scene = new Scene(root, 400, 460);
+		Scene scene = new Scene(root, 600, 900);
 		
 		scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
 			@Override
