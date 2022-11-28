@@ -1,6 +1,8 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Random;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -33,8 +35,9 @@ public class SixController {
 	int rnums = 6;
 	int idx = 0;
 	int ridx = 0;
-	String answer = "ANSWER";
+	String answer;
 	PastGuesses pastguess = new PastGuesses();
+	ArrayList<String> wordList = new ArrayList<String>();
 	//a guess is create once initialize, after that key "enter" on "idx=gamemode.length", will create a new guess
 	//scene change
 	Stage stage;
@@ -46,6 +49,8 @@ public class SixController {
 			{lbl13, lbl23, lbl33, lbl43, lbl53, lbl63},{lbl14, lbl24, lbl34, lbl44, lbl54, lbl64},{lbl15, lbl25, lbl35, lbl45, lbl55, lbl65}};
 		cbMode.setItems(cbOptions);
 		cbMode.setValue("6-Letters Game");
+		wordList = Utilities.ReadWordsFromFile("src/application/six-letter-words.txt");
+		answer = wordList.get(new Random().nextInt(wordList.size()));
 		cbMode.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value){
 				if(new_value.intValue()==0) {

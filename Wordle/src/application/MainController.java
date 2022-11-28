@@ -1,6 +1,13 @@
 package application;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.Random;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -35,10 +42,10 @@ public class MainController {
 	int rnums = 6;
 	int idx = 0;
 	int ridx = 0;
-	String answer = "APPLE";
+	String answer;
 	PastGuesses pastguess = new PastGuesses();
+	ArrayList<String> wordList = new ArrayList<String>();
 	//a guess is create once initialize, after that key "enter" on "idx=gamemode.length", will create a new guess
-	
 	//scene change
 	Stage stage;
 	Scene scene;
@@ -47,7 +54,9 @@ public class MainController {
 		this.allLbl = new Label[][] {{lbl1, lbl2, lbl3, lbl4, lbl5},{lbl11, lbl21, lbl31, lbl41, lbl51},{lbl12, lbl22, lbl32, lbl42, lbl52},
 			{lbl13, lbl23, lbl33, lbl43, lbl53},{lbl14, lbl24, lbl34, lbl44, lbl54},{lbl15, lbl25, lbl35, lbl45, lbl55}};
 		cbMode.setItems(cbOptions);
-		cbMode.setValue("5-Letters Game");	
+		cbMode.setValue("5-Letters Game");
+		wordList = Utilities.ReadWordsFromFile("src/application/five-letter-words-common.txt");
+		answer = wordList.get(new Random().nextInt(wordList.size()));
 		cbMode.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value){
 				if(new_value.intValue()==0) {
