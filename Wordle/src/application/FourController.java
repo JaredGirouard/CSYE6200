@@ -37,7 +37,8 @@ public class FourController {
 	int ridx = 0;
 	String answer;
 	PastGuesses pastguess = new PastGuesses();
-	ArrayList<String> wordList = new ArrayList<String>();
+	ArrayList<String> commonWordList = new ArrayList<String>();
+	ArrayList<String> validWordList = new ArrayList<String>();
 	//a guess is create once initialize, after that key "enter" on "idx=gamemode.length", will create a new guess
 	//scene change
 	Stage stage;
@@ -49,8 +50,9 @@ public class FourController {
 			{lbl13, lbl23, lbl33, lbl43},{lbl14, lbl24, lbl34, lbl44},{lbl15, lbl25, lbl35, lbl45}};
 		cbMode.setItems(cbOptions);
 		cbMode.setValue("4-Letters Game");
-		wordList = Utilities.ReadWordsFromFile("src/application/four-letter-words.txt");
-		answer = wordList.get(new Random().nextInt(wordList.size()));
+		commonWordList = Utilities.ReadWordsFromFile("src/application/four-letter-words-common.txt");
+		validWordList = Utilities.ReadWordsFromFile("src/application/four-letter-words-possible.txt");
+		answer = commonWordList.get(new Random().nextInt(commonWordList.size()));
 		cbMode.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value){
 				if(new_value.intValue()==1) {
@@ -118,6 +120,13 @@ public class FourController {
 		for(Label label:allLbl[ridx]) {
 			str+=label.getText();
 		}
+		
+		if (!validWordList.contains(str))
+		{
+			System.out.println("Invalid guess: "+str);
+			return;
+		}
+		
 		System.out.println("Full String is: "+str);
 		Guess guess = pastguess.newGuess();
 		for(int i=0;i<allLbl[ridx].length;i++) {
