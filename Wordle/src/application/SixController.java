@@ -1,6 +1,9 @@
 package application;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Random;
 
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
@@ -28,13 +31,15 @@ public class SixController {
 	Label solLbl;
 	@FXML
 	ChoiceBox<String> cbMode;
-	ObservableList<String> cbOptions = FXCollections.observableArrayList("4-Letters Game","5-Letters Game","6-Letters Game");
+	ObservableList<String> cbOptions = FXCollections.observableArrayList("4-Letter Game","5-Letter Game","6-Letter Game");
 	int nums = 6;
 	int rnums = 6;
 	int idx = 0;
 	int ridx = 0;
-	String answer = "ANSWER";
+	String answer;
 	PastGuesses pastguess = new PastGuesses();
+	ArrayList<String> commonWordList = new ArrayList<String>();
+	ArrayList<String> validWordList = new ArrayList<String>();
 	//a guess is create once initialize, after that key "enter" on "idx=gamemode.length", will create a new guess
 	//scene change
 	Stage stage;
@@ -45,7 +50,10 @@ public class SixController {
 		this.allLbl = new Label[][] {{lbl1, lbl2, lbl3, lbl4, lbl5, lbl6},{lbl11, lbl21, lbl31, lbl41, lbl51, lbl61},{lbl12, lbl22, lbl32, lbl42, lbl52, lbl62},
 			{lbl13, lbl23, lbl33, lbl43, lbl53, lbl63},{lbl14, lbl24, lbl34, lbl44, lbl54, lbl64},{lbl15, lbl25, lbl35, lbl45, lbl55, lbl65}};
 		cbMode.setItems(cbOptions);
-		cbMode.setValue("6-Letters Game");
+		cbMode.setValue("6-Letter Game");
+		commonWordList = Utilities.ReadWordsFromFile("Wordle/src/application/six-letter-words-common.txt");
+		validWordList = Utilities.ReadWordsFromFile("Wordle/src/application/six-letter-words-possible.txt");
+		answer = commonWordList.get(new Random().nextInt(commonWordList.size()));
 		cbMode.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
 			public void changed(ObservableValue ov, Number value, Number new_value){
 				if(new_value.intValue()==0) {
@@ -113,8 +121,28 @@ public class SixController {
 		for(Label label:allLbl[ridx]) {
 			str+=label.getText();
 		}
+		
+		if (!validWordList.contains(str))
+		{
+			System.out.println("Invalid guess: "+str);
+			return;
+		}
+		
 		System.out.println("Full String is: "+str);
 		Guess guess = pastguess.newGuess();
+		ArrayList<Character> answerElems = new ArrayList<Character>();
+		for (char c: answer.toCharArray()) {answerElems.add(c);}
+		HashMap<Character,Integer> ansMap = new HashMap<>();
+		HashMap<Character,Integer> hitMap = new HashMap<>();	
+		for(char c:answerElems) {
+			if(!ansMap.containsKey(c)) {
+				ansMap.put(c, 1);
+				hitMap.put(c, 0);
+			}else {
+				ansMap.replace(c, ansMap.get(c)+1);
+			}
+		}
+
 		for(int i=0;i<allLbl[ridx].length;i++) {
 			//instance created
 			 
@@ -123,12 +151,28 @@ public class SixController {
 			if(allLbl[ridx][i].getText().equals(String.valueOf(answer.charAt(i)))) {
 				allLbl[ridx][i].setStyle("-fx-border-color:green;-fx-border-width:4;-fx-background-color:EFEEEE");
 				letter.setColor("GREEN");
+				hitMap.replace(letter.getLetter(), hitMap.get(letter.getLetter())+1);
+				//check previous letters if they are set to yellow && , turn it to gray
+				if(!answerElems.contains(letter.getLetter()) && i!=0) {
+					for(int q=i-1;q>=0;q--) {
+						Letter preletter = guess.getGuess().get(q);
+						if(allLbl[ridx][q].getText().equals(String.valueOf(answer.charAt(i))) && !preletter.getColor().equals("GREEN") && hitMap.get(letter.getLetter())>=ansMap.get(letter.getLetter())) {
+							allLbl[ridx][q].setStyle("-fx-border-color:gray;-fx-border-width:4;-fx-background-color:EFEEEE");							
+							preletter.setColor("GRAY");
+						}
+					}
+				}
+				answerElems.remove(Character.valueOf(letter.getLetter()));
+			
 			}else{
 				for(int j=0;j<answer.length();j++) {
 					if(allLbl[ridx][i].getText().equals(String.valueOf(answer.charAt(j)))) {
-						allLbl[ridx][i].setStyle("-fx-border-color:cfad27;-fx-border-width:4;-fx-background-color:EFEEEE");
-						letter.setColor("YELLOW");
-						break;
+						if(answerElems.contains(letter.getLetter())) {
+							allLbl[ridx][i].setStyle("-fx-border-color:cfad27;-fx-border-width:4;-fx-background-color:EFEEEE");
+							letter.setColor("YELLOW");	
+							answerElems.remove(Character.valueOf(letter.getLetter()));
+							break;
+						}				
 					}else {
 						allLbl[ridx][i].setStyle("-fx-border-color:gray;-fx-border-width:4;-fx-background-color:EFEEEE");
 					}
