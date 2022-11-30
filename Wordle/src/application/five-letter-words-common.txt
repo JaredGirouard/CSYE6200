@@ -41,7 +41,6 @@ aglow
 agony
 agree
 ahead
-aider
 aisle
 alarm
 album
@@ -159,8 +158,6 @@ baste
 batch
 bathe
 baton
-batty
-bawdy
 bayou
 beach
 beady
@@ -185,7 +182,6 @@ beret
 berry
 berth
 beset
-betel
 bevel
 bezel
 bible
@@ -251,7 +247,6 @@ bosom
 bossy
 botch
 bough
-boule
 bound
 bowel
 boxer
@@ -342,7 +337,6 @@ cater
 catty
 caulk
 cause
-cavil
 cease
 cedar
 cello
@@ -446,10 +440,8 @@ could
 count
 coupe
 court
-coven
 cover
 covet
-covey
 cower
 coyly
 crack
@@ -487,13 +479,11 @@ crone
 crony
 crook
 cross
-croup
 crowd
 crown
 crude
 cruel
 crumb
-crump
 crush
 crust
 crypt
@@ -595,7 +585,6 @@ drift
 drill
 drink
 drive
-droit
 droll
 drone
 drool
@@ -628,14 +617,11 @@ easel
 eaten
 eater
 ebony
-eclat
 edict
 edify
 eerie
-egret
 eight
 eject
-eking
 elate
 elbow
 elder
@@ -783,7 +769,6 @@ foamy
 focal
 focus
 foggy
-foist
 folio
 folly
 foray
@@ -818,7 +803,6 @@ frown
 froze
 fruit
 fudge
-fugue
 fully
 fungi
 funky
@@ -828,7 +812,6 @@ furry
 fussy
 fuzzy
 gaffe
-gaily
 gamer
 gamma
 gamut
@@ -957,7 +940,6 @@ hasty
 hatch
 hater
 haunt
-haute
 haven
 havoc
 hazel
@@ -1062,8 +1044,6 @@ juice
 juicy
 jumbo
 jumpy
-junta
-junto
 juror
 kappa
 karma
@@ -1199,7 +1179,6 @@ march
 marry
 marsh
 mason
-masse
 match
 matey
 mauve
@@ -1230,7 +1209,6 @@ milky
 mimic
 mince
 miner
-minim
 minor
 minty
 minus
@@ -1257,7 +1235,6 @@ motel
 motif
 motor
 motto
-moult
 mound
 mount
 mourn
@@ -1279,7 +1256,6 @@ music
 musky
 musty
 myrrh
-nadir
 naive
 nanny
 nasal
@@ -1335,7 +1311,6 @@ omega
 onion
 onset
 opera
-opine
 opium
 optic
 orbit
@@ -1351,7 +1326,6 @@ outgo
 ovary
 ovate
 overt
-ovine
 ovoid
 owing
 owner
@@ -1534,7 +1508,6 @@ rally
 ralph
 ramen
 ranch
-randy
 range
 rapid
 rarer
@@ -1542,7 +1515,6 @@ raspy
 ratio
 ratty
 raven
-rayon
 razor
 reach
 react
@@ -1551,7 +1523,6 @@ realm
 rearm
 rebar
 rebel
-rebus
 rebut
 recap
 recur
@@ -1684,7 +1655,6 @@ segue
 seize
 semen
 sense
-sepia
 serif
 serum
 serve
@@ -1915,7 +1885,6 @@ steed
 steel
 steep
 steer
-stein
 stern
 stick
 stiff
@@ -2049,7 +2018,6 @@ three
 threw
 throb
 throw
-thrum
 thumb
 thump
 thyme
@@ -2067,17 +2035,14 @@ tithe
 title
 toast
 today
-toddy
 token
 tonal
-tonga
 tonic
 tooth
 topaz
 topic
 torch
 torso
-torus
 total
 totem
 touch
@@ -2121,11 +2086,8 @@ trunk
 truss
 trust
 truth
-tryst
-tubal
 tuber
 tulip
-tulle
 tumor
 tunic
 turbo
@@ -2171,7 +2133,6 @@ usher
 using
 usual
 usurp
-utile
 utter
 vague
 valet
@@ -2188,8 +2149,6 @@ venom
 venue
 verge
 verse
-verso
-verve
 vicar
 video
 vigil
