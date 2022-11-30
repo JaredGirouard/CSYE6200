@@ -141,10 +141,6 @@ public class MainController {
 	
 	public void SubmitGuess() {
 		if(idx!=nums) {return;}
-		if(ridx == rnums-1) {
-			solLbl.setText(answer);
-			solLbl.setStyle("-fx-background-radius:8;-fx-background-color:black");
-		}	
 		String str="";
 		for(Label label:allLbl[ridx]) {
 			str+=label.getText();
@@ -154,6 +150,10 @@ public class MainController {
 		{
 			System.out.println("Invalid guess: "+str);
 			return;
+		}
+		if(ridx == rnums-1) {
+			solLbl.setText(answer);
+			solLbl.setStyle("-fx-background-radius:8;-fx-background-color:black");
 		}
 		
 		System.out.println("Full String is: "+str);

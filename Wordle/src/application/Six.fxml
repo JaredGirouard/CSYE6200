@@ -273,10 +273,13 @@
             <Font name="Baloo Regular" size="50.0" />
          </font>
       </Label>
-      <Button layoutX="268.0" layoutY="116.0" mnemonicParsing="false" onAction="#Start" onKeyReleased="#SetLabelText" prefHeight="35.0" prefWidth="86.0" text="Start!">
+      <Button layoutX="268.0" layoutY="116.0" mnemonicParsing="false" onAction="#Start" onKeyReleased="#SetLabelText" prefHeight="35.0" prefWidth="86.0" style="-fx-background-color: #6AAA64; -fx-background-radius: 10;" text="START" textFill="#fcfcfc">
          <font>
             <Font name="Helvetica Neue" size="16.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
       <VBox layoutX="90.0" layoutY="666.0" prefHeight="150.0" prefWidth="442.0" spacing="7.0">
          <children>

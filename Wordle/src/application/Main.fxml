@@ -472,10 +472,13 @@
             </HBox>
          </children>
       </VBox>
-      <Button layoutX="251.0" layoutY="106.0" mnemonicParsing="false" onAction="#Start" onKeyReleased="#SetLabelText" prefHeight="35.0" prefWidth="80.0" text="Start!">
+      <Button layoutX="251.0" layoutY="106.0" mnemonicParsing="false" onAction="#Start" onKeyReleased="#SetLabelText" prefHeight="35.0" prefWidth="80.0" style="-fx-background-color: #6AAA64; -fx-background-radius: 10;" text="START" textFill="WHITE">
          <font>
             <Font name="Helvetica Neue" size="16.0" />
          </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
       </Button>
    </children>
 </AnchorPane>

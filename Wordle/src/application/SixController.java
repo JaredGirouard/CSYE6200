@@ -141,10 +141,6 @@ public class SixController {
 	
 	public void SubmitGuess() {
 		if(idx!=nums) {return;}
-		if(ridx == rnums-1) {
-			solLbl.setText(answer);
-			solLbl.setStyle("-fx-background-radius:8;-fx-background-color:black");
-		}
 		String str="";
 		for(Label label:allLbl[ridx]) {
 			str+=label.getText();
@@ -154,6 +150,10 @@ public class SixController {
 		{
 			System.out.println("Invalid guess: "+str);
 			return;
+		}
+		if(ridx == rnums-1) {
+			solLbl.setText(answer);
+			solLbl.setStyle("-fx-background-radius:8;-fx-background-color:black");
 		}
 		
 		System.out.println("Full String is: "+str);
@@ -177,7 +177,7 @@ public class SixController {
 			Letter letter = guess.newLetter(str.charAt(i));
 			//setStyle
 			if(allLbl[ridx][i].getText().equals(String.valueOf(answer.charAt(i)))) {
-				allLbl[ridx][i].setStyle("-fx-border-color:green;-fx-border-width:4;-fx-background-color:EFEEEE");
+				allLbl[ridx][i].setStyle("-fx-border-color:darkseagreen;-fx-border-width:4;-fx-background-color:EFEEEE");
 				letter.setColor("GREEN");
 				hitMap.replace(letter.getLetter(), hitMap.get(letter.getLetter())+1);
 				//check previous letters if they are set to yellow && , turn it to gray
