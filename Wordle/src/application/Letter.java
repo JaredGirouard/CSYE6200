@@ -1,6 +1,6 @@
 package application;
 
-public class Letter {
+public class Letter implements Comparable<Letter>{
 	private char letter;
 	private String color;
 
@@ -25,6 +25,14 @@ public class Letter {
 	}
 	public void setColor(String color) {
 		this.color = color;
+	}
+	@Override
+	public int compareTo(Letter o) {
+		if(letter == o.getLetter()) {
+			return 1;
+		}else {
+			return 0;
+		}	
 	}
 	
 }

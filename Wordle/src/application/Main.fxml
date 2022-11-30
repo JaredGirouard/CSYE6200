@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -10,7 +11,8 @@
 
 <AnchorPane minHeight="900.0" minWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.MainController">
    <children>
-      <VBox fx:id="ap" alignment="CENTER" layoutX="30.0" layoutY="103.0" prefHeight="577.0" prefWidth="536.0" spacing="10.0">
+      <ChoiceBox fx:id="cbMode" layoutX="342.0" layoutY="111.0" prefHeight="26.0" prefWidth="131.0" />
+      <VBox alignment="CENTER" layoutX="130.0" layoutY="154.0" prefHeight="368.0" prefWidth="341.0" spacing="10.0">
          <children>
             <HBox alignment="CENTER" prefHeight="70.0" prefWidth="392.0" spacing="10.0">
                <children>
@@ -41,7 +43,7 @@
                   </Label>
                </children>
             </HBox>
-            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="392.0" spacing="10.0">
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="410.0" spacing="10.0">
                <children>
                   <Label fx:id="lbl11" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
                      <font>
@@ -186,10 +188,294 @@
                   </Label>
                </children>
             </HBox>
+            <HBox alignment="CENTER" prefHeight="70.0" prefWidth="429.0" spacing="10.0">
+               <children>
+                  <Label fx:id="lbl16" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
+                     <font>
+                        <Font size="43.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl26" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
+                     <font>
+                        <Font size="43.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl36" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
+                     <font>
+                        <Font size="43.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl46" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
+                     <font>
+                        <Font size="43.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="lbl56" alignment="CENTER" graphicTextGap="2.0" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: EFEEEE; -fx-border-color: gray; -fx-border-width: 4;" textAlignment="CENTER">
+                     <font>
+                        <Font size="43.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
          </children>
       </VBox>
-      <Button fx:id="btn1" layoutX="272.0" layoutY="721.0" mnemonicParsing="false" onAction="#SubmitGuess" onKeyReleased="#SetLabelText" text="ENTER" />
-      <Label fx:id="solLbl" alignment="CENTER" layoutX="221.0" layoutY="775.0" prefHeight="70.0" prefWidth="159.0" />
-      <ChoiceBox fx:id="cbMode" layoutX="223.0" layoutY="67.0" prefWidth="150.0" />
+      <Label fx:id="solLbl" alignment="CENTER" layoutX="271.0" layoutY="845.0" opacity="0.7" prefHeight="45.0" prefWidth="104.0" textFill="WHITE">
+         <font>
+            <Font size="20.0" />
+         </font></Label>
+      <Button fx:id="btnAdd" layoutX="130.0" layoutY="106.0" mnemonicParsing="false" onAction="#AddRow" text="+">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnDel" layoutX="185.0" layoutY="106.0" mnemonicParsing="false" onAction="#DeleteRow" prefHeight="35.0" prefWidth="35.0" text="-">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
+      <Label layoutX="202.0" layoutY="14.0" text="WORDLE">
+         <font>
+            <Font name="Baloo Regular" size="50.0" />
+         </font>
+      </Label>
+      <VBox layoutX="95.0" layoutY="674.0" prefHeight="171.0" prefWidth="424.0" spacing="7.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="50.0" prefWidth="386.0" spacing="7.0">
+               <children>
+                  <Label fx:id="lblQ" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="Q">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblW" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="W">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblE" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="E">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblR" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="R">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblT" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="T">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblY" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="Y">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblU" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="U">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblI" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="I">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblO" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="O">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblP" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="P">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="424.0" spacing="7.0">
+               <children>
+                  <Label fx:id="lblA" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="A">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblS" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="S">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblD" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="D">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblF" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="F">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblG" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="G">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblH" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="H">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblJ" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="J">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblK" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="K">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblL" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="L">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="52.0" prefWidth="424.0" spacing="7.0">
+               <children>
+                  <Button fx:id="btn1" mnemonicParsing="false" onAction="#SubmitGuess" onKeyReleased="#SetLabelText" prefHeight="45.0" prefWidth="57.0" text="ENTER">
+                     <font>
+                        <Font name="Helvetica Neue" size="11.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="lblZ" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="Z">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblX" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="X">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblC" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="C">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblV" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="V">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblB" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="B">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblN" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="N">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Label fx:id="lblM" alignment="CENTER" onMouseClicked="#onKeyClicked" prefHeight="45.0" prefWidth="35.0" style="-fx-background-color: E3E3E3; -fx-background-radius: 8;" text="M">
+                     <font>
+                        <Font name="Helvetica Neue" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Label>
+                  <Button fx:id="btnBack" mnemonicParsing="false" onAction="#Backward" onKeyReleased="#SetLabelText" prefHeight="45.0" prefWidth="57.0" text="⌫">
+                     <font>
+                        <Font name="Helvetica Neue" size="23.0" />
+                     </font>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+      <Button layoutX="251.0" layoutY="106.0" mnemonicParsing="false" onAction="#Start" onKeyReleased="#SetLabelText" prefHeight="35.0" prefWidth="80.0" text="Start!">
+         <font>
+            <Font name="Helvetica Neue" size="16.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
