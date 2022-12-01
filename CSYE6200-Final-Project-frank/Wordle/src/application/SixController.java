@@ -145,7 +145,7 @@ public class SixController {
 	public void SubmitGuess() {
 		GameHistory history = new GameHistory();
 		GameHistory.get();
-		history.addGuess();
+		
 		if(idx!=nums) {return;}
 		String str="";
 		for(Label label:allLbl[ridx]) {
@@ -157,6 +157,7 @@ public class SixController {
 			System.out.println("Invalid guess: "+str);
 			return;
 		}
+		history.addGuess();
 		if(ridx == rnums-1) {
 			solLbl.setText(answer);
 			solLbl.setStyle("-fx-background-radius:8;-fx-background-color:black");
@@ -235,7 +236,7 @@ public class SixController {
 			}
 		}else {
 			int guessNum = pastguess.getSize();
-			if(guessNum==6) {
+			if(guessNum==rnums) {
 				System.out.printf("You lose!%n");
 				history.addLoss();
 				try {
